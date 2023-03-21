@@ -27,8 +27,8 @@ class StudentsController < ApplicationController
 
       def update
         student = find_student
-        student = Student.update(student_params)
-        render json: student.to_json(except: [:created_at, :updated_at]), status: :created
+        student = student.update(student_params)
+        render json: find_student.to_json(except: [:created_at, :updated_at]), status: :created
       end
 
   private
